@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Magical Journey for You ⚡</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/screens.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Magical background elements -->
+    <div class="magical-bg">
+        <div class="stars" id="stars"></div>
+        <div class="floating-elements" id="floatingElements"></div>
+        <div class="golden-particles" id="particles"></div>
+    </div>
+
+    <div class="container">
+        <!-- Welcome Screen -->
+        <div class="screen active" id="welcomeScreen">
+            <div class="hogwarts-crest">⚡</div>
+            <h1 class="magical-title">A Magical 18th Birthday Journey</h1>
+            <div class="scroll-container">
+                <p class="magical-message">
+                    My Dearest Witch Didiel,<br><br>
+                    
+                    On this most special day, as you turn eighteen and step into a new chapter of magic and wonder, 
+                    I have prepared something extraordinary for you.<br><br>
+                    
+                    Like the founders of Hogwarts left behind their greatest treasures, I have hidden magical memories 
+                    throughout this enchanted journey. Each memory is protected by ancient magic - only you hold the 
+                    keys to unlock them.<br><br>
+                    
+                    Are you ready to discover the magic we've created together?
+                </p>
+            </div>
+            <button class="magical-btn" onclick="startJourney()">
+                <span>Begin the Magic</span>
+                <div class="btn-sparkles"></div>
+            </button>
+        </div>
+
+        <!-- Video Screen -->
+        <div class="screen" id="videoScreen">
+            <div class="marauders-header">
+                <!-- Video Navigation Menu (moved above chapter title) -->
+                <div id="videoNavMenu" class="video-nav-menu"></div>
+                <div class="chapter-indicator" id="chapterIndicator">Chapter I</div>
+                <div class="magical-border"></div>
+            </div>
+            
+            <div class="pensieve-container">
+                <div class="pensieve-glow"></div>
+                <div class="memory-viewer" id="videoPlayer"></div>
+            </div>
+            
+            <div class="memory-status" id="memoryStatus">
+                <div class="hourglass">⏳</div>
+                <span>The memory is still forming...</span>
+            </div>
+        </div>
+
+        <!-- Riddle Screen -->
+        <div class="screen" id="riddleScreen">
+            <div class="sphinx-container">
+                <div class="sphinx-glow"></div>
+                <div class="riddle-scroll">
+                    <h2 class="riddle-title">The Sphinx's Riddle</h2>
+                    <p class="riddle-text" id="riddleText">Answer me this, young witch...</p>
+                    
+                    <div class="answer-section">
+                        <input type="password" class="magical-input" id="riddleAnswer" 
+                               placeholder="Speak the answer...">
+                        <div class="input-glow"></div>
+                    </div>
+                    
+                    <div class="spell-buttons">
+                        <button class="spell-btn primary" onclick="checkAnswer()">
+                            <span>Cast Alohomora</span>
+                            <div class="spell-effect"></div>
+                        </button>
+                        <button class="spell-btn secondary" onclick="requestHint()">
+                            <span>Seek Guidance</span>
+                        </button>
+                    </div>
+                    
+                    <div class="spell-result" id="spellResult"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Celebration Screen -->
+        <div class="screen" id="celebrationScreen">
+            <div class="celebration-magic">
+                <div class="fireworks-container" id="magicalFireworks"></div>
+                <div class="golden-snitch-container" id="goldenSnitch"></div>
+                
+                <h1 class="victory-title">🏆 The Golden Snitch is Yours! 🏆</h1>
+                
+                <div class="final-scroll">
+                    <div class="scroll-header">⚡ A Message from Your Heart ⚡</div>
+                    <div class="final-letter" id="finalLetter">
+                        <p><em>My Most Precious Didiel,</em></p>
+                        <br>
+                        <p>Like Harry finding his way through the trials of Hogwarts, you have journeyed through each magical memory with grace and wonder. Every riddle you solved, every password you discovered, represents a piece of the extraordinary magic we share.</p>
+                        <br>
+                        <p>Today, as you turn 18, you're not just growing older - you're stepping into your own magical destiny. You have the wisdom of Ravenclaw, the courage of Gryffindor, the loyalty of Hufflepuff, and the ambition of Slytherin all within your beautiful heart.</p>
+                        <br>
+                        <p>The love you've heard in these memories - from family, friends, and from me - is more powerful than any spell ever cast. It will protect you, guide you, and remind you that you are never truly alone in this magical world.</p>
+                        <br>
+                        <p>May your 18th year be filled with as much wonder and magic as the day I first met you. And remember, just like Dumbledore said: "Happiness can be found even in the darkest of times, if one only remembers to turn on the light."</p>
+                        <br>
+                        <p>You are my light, my magic, and my greatest adventure.</p>
+                        <br>
+                        <p><strong>Always and forever yours,<br>Your nyel Who Believes in Magic 💫</strong></p>
+                    </div>
+                </div>
+                
+                <div class="final-spells">
+                    <button class="spell-btn magical" onclick="downloadMemories()">
+                        <span>📜 Preserve Memories</span>
+                        <div class="preservation-effect"></div>
+                    </button>
+                    <button class="spell-btn restart" onclick="restartJourney()">
+                        <span>🔄 Relive the Magic</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- YouTube IFrame API -->
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <!-- JavaScript files -->
+    <script src="js/config.js"></script>
+    <script src="js/effects.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
